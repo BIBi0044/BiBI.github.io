@@ -159,11 +159,36 @@
             <p class="text-gray-400">Made with <span class="text-pink-500">♥</span> by someone special</p>
         </div>
     </footer>
-
     <!-- Audio Element -->
-<audio id="bg-music" loop>
+    <audio id="bg-music" loop autoplay>
         <source src="https://www.saavn.com/s/artist/indila-songs/Love-Story/8IhJ9N,JEIA_" type="audio/mpeg">
-</audio>
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgMusic = document.getElementById('bg-music');
+            bgMusic.volume = 0.3;
+            
+            // Try to start playback immediately
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    // Auto-play was prevented, show play button
+                    const playBtn = document.createElement('button');
+                    playBtn.className = 'fixed bottom-4 right-4 bg-pink-500 text-white p-3 rounded-full shadow-lg z-50';
+                    playBtn.innerHTML = '<i data-feather="volume-2"></i>';
+                    document.body.appendChild(playBtn);
+                    feather.replace();
+                    
+                    playBtn.addEventListener('click', () => {
+                        bgMusic.play();
+                        playBtn.remove();
+                    });
+                });
+            }
+        });
+    </script>
 <iframe width="0" height="0" src="https://www.youtube.com/embed/SYzBlaedlFI?autoplay=1&controls=0" frameborder="0" allow="autoplay"></iframe>
 <script>
         // Initialize animations and effects
