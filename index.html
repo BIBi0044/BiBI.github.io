@@ -159,8 +159,11 @@
             <p class="text-gray-400">Made with <span class="text-pink-500">♥</span> by someone special</p>
         </div>
     </footer>
+    <div class="text-center pb-8">
+        <a href="/homies.html" class="text-pink-400 hover:text-pink-300 transition-colors">For The Homies 💪</a>
+    </div>
     <!-- Audio Element -->
-    <audio id="bg-music" loop autoplay>
+<audio id="bg-music" loop autoplay>
         <source src="https://www.saavn.com/s/artist/indila-songs/Love-Story/8IhJ9N,JEIA_" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -189,7 +192,31 @@
             }
         });
     </script>
-<iframe width="0" height="0" src="https://www.youtube.com/embed/SYzBlaedlFI?autoplay=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+<script src="https://www.youtube.com/iframe_api"></script>
+<div id="player"></div>
+<script>
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '0',
+      width: '0',
+      videoId: 'SYzBlaedlFI',
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        loop: 1,
+        playlist: 'SYzBlaedlFI'
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+  function onPlayerReady(event) {
+    document.body.addEventListener('click', () => {
+      event.target.playVideo();
+    }, { once: true });
+  }
+</script>
 <script>
         // Initialize animations and effects
         document.addEventListener('DOMContentLoaded', () => {
