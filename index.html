@@ -159,65 +159,13 @@
             <p class="text-gray-400">Made with <span class="text-pink-500">♥</span> by someone special</p>
         </div>
     </footer>
-    <div class="text-center pb-8">
-        <a href="/homies.html" class="text-pink-400 hover:text-pink-300 transition-colors">For The Homies 💪</a>
-    </div>
+
     <!-- Audio Element -->
-<audio id="bg-music" loop autoplay>
-        <source src="https://www.saavn.com/s/artist/indila-songs/Love-Story/8IhJ9N,JEIA_" type="audio/mpeg">
-        Your browser does not support the audio element.
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bgMusic = document.getElementById('bg-music');
-            bgMusic.volume = 0.3;
-            
-            // Try to start playback immediately
-            const playPromise = bgMusic.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    // Auto-play was prevented, show play button
-                    const playBtn = document.createElement('button');
-                    playBtn.className = 'fixed bottom-4 right-4 bg-pink-500 text-white p-3 rounded-full shadow-lg z-50';
-                    playBtn.innerHTML = '<i data-feather="volume-2"></i>';
-                    document.body.appendChild(playBtn);
-                    feather.replace();
-                    
-                    playBtn.addEventListener('click', () => {
-                        bgMusic.play();
-                        playBtn.remove();
-                    });
-                });
-            }
-        });
-    </script>
-<script src="https://www.youtube.com/iframe_api"></script>
-<div id="player"></div>
-<script>
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '0',
-      width: '0',
-      videoId: 'SYzBlaedlFI',
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        loop: 1,
-        playlist: 'SYzBlaedlFI'
-      },
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
-  function onPlayerReady(event) {
-    document.body.addEventListener('click', () => {
-      event.target.playVideo();
-    }, { once: true });
-  }
-</script>
-<script>
         // Initialize animations and effects
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize libraries
@@ -323,10 +271,11 @@
                     yoyo: true,
                     ease: "power2.inOut"
                 });
-                // Start music only
+                
+                // Start music
                 document.getElementById('bg-music').volume = 0.3;
                 document.getElementById('bg-music').play();
-});
+            });
 
             // Surprise button
             document.getElementById('surprise-btn').addEventListener('click', () => {
