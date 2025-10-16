@@ -1,298 +1,209 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You, L</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💘</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <title>ker qn qwz
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap');
-        .text-gradient {
-            background: linear-gradient(45deg, #ff4d6d, #ffd6e0);
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: #000000;
+            color: var(--light-color);
+        }
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-color);
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+}
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
-        .glassmorphism {
-            background: rgba(255, 214, 224, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #b8c2cc;
+}
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-        .cursor-trail {
+        .image-card {
+            background: #000000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+            border: 1px solid #333333;
+}
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        .image-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .image-info {
+            padding: 1.2rem;
+        }
+        .image-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .image-info p {
+            color: #b8c2cc;
+font-size: 0.9rem;
+        }
+        .audio-controls {
             position: fixed;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(255, 77, 109, 0.6);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            mix-blend-mode: screen;
+            bottom: 2rem;
+            right: 2rem;
+            background: #000000;
+            padding: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333333;
+display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        .heart {
-            position: absolute;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
+        .audio-controls button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            cursor: pointer;
         }
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-        .typewriter {
-            border-right: 2px solid #ff4d6d;
-            animation: blink 0.75s step-end infinite;
-        }
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: #ff4d6d; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #636e72;
+            font-size: 0.9rem;
         }
     </style>
 </head>
-<body class="bg-black text-gray-100 font-montserrat min-h-screen overflow-x-hidden" id="vanta-bg">
-    <!-- Cursor Trail -->
-    <div class="cursor-trail"></div>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+           
+        </header>
 
-    <!-- Floating Hearts -->
-    <div id="hearts-container"></div>
+        <section class="hero">
+            <h1>sksy</h1>
+            <p>msha w saqi hama w bla</p>
+        </section>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center px-4 relative overflow-hidden" data-aos="fade">
-        <div class="text-center max-w-3xl mx-auto z-10">
-            <h1 class="text-4xl md:text-6xl font-playfair mb-6">
-                <span class="text-gradient">Hey L...</span>
-            </h1>
-            <div class="text-xl md:text-3xl mb-12 h-12">
-                <span class="typewriter" id="typewriter"></span>
-            </div>
-            <button id="enter-btn" class="px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white font-medium transform hover:scale-105 transition-all duration-300 shadow-lg shadow-pink-500/30">
-                Click to enter <i data-feather="chevron-down" class="ml-2"></i>
-            </button>
-        </div>
-        <div class="absolute bottom-10 animate-bounce">
-            <i data-feather="chevron-down" class="text-pink-400 opacity-70"></i>
-        </div>
-    </section>
-
-    <!-- Memory Gallery -->
-    <section class="min-h-screen py-20 px-4 relative">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-playfair text-center mb-16 text-gradient" data-aos="fade-up">Our Moments</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glassmorphism rounded-xl p-6 backdrop-blur-md border border-pink-900/30 hover:border-pink-500/50 transition-all" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-pink-900/10 rounded-lg mb-4 overflow-hidden">
-                        <img src="http://static.photos/nature/640x360/1" alt="Memory" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-playfair mb-2">First Conversation</h3>
-                    <p class="text-gray-300">That moment when time stood still...</p>
-                </div>
-                
-                <div class="glassmorphism rounded-xl p-6 backdrop-blur-md border border-pink-900/30 hover:border-pink-500/50 transition-all" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-pink-900/10 rounded-lg mb-4 overflow-hidden">
-                        <img src="http://static.photos/cityscape/640x360/2" alt="Memory" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-playfair mb-2">Shared Laughter</h3>
-                    <p class="text-gray-300">Your smile brightens my darkest days...</p>
-                </div>
-                
-                <div class="glassmorphism rounded-xl p-6 backdrop-blur-md border border-pink-900/30 hover:border-pink-500/50 transition-all" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-pink-900/10 rounded-lg mb-4 overflow-hidden">
-                        <img src="http://static.photos/travel/640x360/3" alt="Memory" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-playfair mb-2">Unforgettable Times</h3>
-                    <p class="text-gray-300">Every second with you becomes a treasure...</p>
+        <section id="gallery" class="image-grid">
+            <div class="image-card">
+                <img src="http://static.photos/nature/600x400/1" alt="Nature 1">
+                <div class="image-info">
+                    <h3> </h3>
+                    <p></p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Message Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 relative">
-        <div class="glassmorphism max-w-2xl mx-auto p-8 md:p-12 rounded-2xl shadow-xl" data-aos="zoom-in">
-            <div class="space-y-6">
-                <div class="text-xl md:text-2xl leading-relaxed opacity-0" id="message-line-1">I just wanted to say...</div>
-                <div class="text-xl md:text-2xl leading-relaxed opacity-0" id="message-line-2">You mean more to me than words can express...</div>
-                <div class="text-xl md:text-2xl leading-relaxed opacity-0" id="message-line-3">And I'll always cherish the light you bring into my life...</div>
+            <div class="image-card">
+                <img src="http://static.photos/nature/600x400/2" alt="Nature 2">
+                <div class="image-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
-            <div class="mt-12 text-center">
-                <button id="heart-btn" class="p-4 rounded-full bg-pink-900/20 hover:bg-pink-900/30 transition-all">
-                    <i data-feather="heart" class="text-pink-500 w-10 h-10"></i>
-                </button>
+            <div class="image-card">
+                <img src="http://static.photos/nature/600x400/3" alt="Nature 3">
+                <div class="image-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Heart Animation Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center px-4 relative" id="heart-section">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-playfair mb-6 text-gradient" data-aos="fade-up">This Heart Beats For You</h2>
-            <div class="w-48 h-48 mx-auto relative" id="pulsing-heart">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                    <path fill="#ff4d6d" d="M100 185c-25-20-50-35-70-55-30-30-35-80-5-110 20-20 50-20 75 5l5 5 5-5c25-25 55-25 75-5 30 30 25 80-5 110-20 20-45 35-70 55z"/>
-                </svg>
+            <div class="image-card">
+                <img src="http://static.photos/nature/600x400/4" alt="Nature 4">
+                <div class="image-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Final Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center relative">
-        <div class="max-w-2xl mx-auto space-y-8">
-            <h2 class="text-3xl md:text-5xl font-playfair text-gradient" data-aos="fade-up">L, this was made just for you</h2>
-            <p class="text-xl md:text-2xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">— from someone who admires you more than words can say</p>
-            <button id="surprise-btn" class="mt-12 px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white font-medium transform hover:scale-105 transition-all duration-300 shadow-lg shadow-pink-500/30" data-aos="fade-up" data-aos-delay="400">
-                Click for a surprise <i data-feather="gift" class="ml-2"></i>
-            </button>
+        <div class="audio-controls">
+            <button id="playBtn"><i class="fas fa-play"></i></button>
+            <button id="pauseBtn"><i class="fas fa-pause"></i></button>
+            <button id="volumeUp"><i class="fas fa-volume-up"></i></button>
         </div>
-    </section>
+        <iframe id="bgMusic" width="0" height="0" src="https://www.youtube.com/embed/n29PtY3OBm0?si=OL7-_UEZ8-e9EQ4F&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
-    <!-- Footer -->
-    <footer class="py-12 text-center relative">
-        <div class="max-w-md mx-auto px-4">
-            <p class="text-gray-400">Made with <span class="text-pink-500">♥</span> by someone special</p>
-        </div>
+    <footer>
+        <p>&copy; HAMTAN ATASHM</p>
     </footer>
 
-    <!-- Audio Element -->
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
-        // Initialize animations and effects
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize libraries
-            AOS.init({ duration: 800, once: true });
-            feather.replace();
-            
-            // Vanta.js background
-            VANTA.GLOBE({
-                el: "#vanta-bg",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: 0xff4d6d,
-                backgroundColor: 0x0a0a0a,
-                size: 0.8
-            });
+        const iframe = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const volumeUp = document.getElementById('volumeUp');
 
-            // Typewriter effect
-            const phrases = ["I made something for you...", "Just for your beautiful eyes...", "Because you're special..."];
-            let currentPhrase = 0;
-            let currentLetter = 0;
-            let deleting = false;
-            const typewriterEl = document.getElementById('typewriter');
-            
-            function typeWriter() {
-                const currentText = phrases[currentPhrase].substring(0, currentLetter);
-                typewriterEl.textContent = currentText;
-                
-                if (!deleting) {
-                    if (currentLetter < phrases[currentPhrase].length) {
-                        currentLetter++;
-                        setTimeout(typeWriter, 100);
-                    } else {
-                        deleting = true;
-                        setTimeout(typeWriter, 2000);
-                    }
-                } else {
-                    if (currentLetter > 0) {
-                        currentLetter--;
-                        setTimeout(typeWriter, 50);
-                    } else {
-                        deleting = false;
-                        currentPhrase = (currentPhrase + 1) % phrases.length;
-                        setTimeout(typeWriter, 500);
-                    }
-                }
-            }
-            
-            setTimeout(typeWriter, 1000);
-
-            // Cursor trail effect
-            const cursor = document.querySelector('.cursor-trail');
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-
-            // Floating hearts
-            function createHeart() {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.innerHTML = '<i data-feather="heart" class="text-pink-500 opacity-70"></i>';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-                heart.style.animationDuration = (Math.random() * 8 + 4) + 's';
-                document.getElementById('hearts-container').appendChild(heart);
-                setTimeout(() => {
-                    heart.remove();
-                }, 10000);
-            }
-            setInterval(createHeart, 800);
-            feather.replace();
-
-            // Scroll to sections
-            document.getElementById('enter-btn').addEventListener('click', () => {
-                document.querySelector('section:nth-of-type(2)').scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // Animated message lines
-            setTimeout(() => {
-                gsap.to("#message-line-1", {duration: 1, opacity: 1, y: 0});
-            }, 500);
-            setTimeout(() => {
-                gsap.to("#message-line-2", {duration: 1, opacity: 1, y: 0});
-            }, 2000);
-            setTimeout(() => {
-                gsap.to("#message-line-3", {duration: 1, opacity: 1, y: 0});
-            }, 3500);
-
-            // Pulsing heart animation
-            document.getElementById('heart-btn').addEventListener('click', () => {
-                const heartSection = document.getElementById('heart-section');
-                heartSection.scrollIntoView({ behavior: 'smooth' });
-                
-                gsap.to("#pulsing-heart", {
-                    scale: 1.2,
-                    duration: 0.5,
-                    repeat: 3,
-                    yoyo: true,
-                    ease: "power2.inOut"
-                });
-                
-                // Start music
-                document.getElementById('bg-music').volume = 0.3;
-                document.getElementById('bg-music').play();
-            });
-
-            // Surprise button
-            document.getElementById('surprise-btn').addEventListener('click', () => {
-                for (let i = 0; i < 50; i++) {
-                    createHeart();
-                }
-                
-                const surpriseText = document.createElement('div');
-                surpriseText.className = 'fixed inset-0 flex items-center justify-center z-50';
-                surpriseText.innerHTML = '<h1 class="text-6xl md:text-8xl font-playfair text-gradient animate-pulse">I ❤️ You</h1>';
-                document.body.appendChild(surpriseText);
-                
-                setTimeout(() => {
-                    gsap.to(surpriseText, {opacity: 0, duration: 2, onComplete: () => surpriseText.remove()});
-                }, 3000);
-            });
+        playBtn.addEventListener('click', () => {
+            iframe.src = iframe.src.replace('&mute=1', '');
         });
-    </script>
+
+        pauseBtn.addEventListener('click', () => {
+            iframe.src = iframe.src.includes('&mute=1') ? iframe.src : iframe.src + '&mute=1';
+        });
+
+        volumeUp.addEventListener('click', () => {
+            iframe.src = iframe.src.includes('&mute=1') ? iframe.src.replace('&mute=1', '') : iframe.src;
+        });
+</script>
 </body>
 </html>
