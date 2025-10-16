@@ -161,11 +161,11 @@
     </footer>
 
     <!-- Audio Element -->
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
+<audio id="bg-music" loop>
+        <source src="https://www.saavn.com/s/artist/indila-songs/Love-Story/8IhJ9N,JEIA_" type="audio/mpeg">
+</audio>
+<iframe width="0" height="0" src="https://www.youtube.com/embed/SYzBlaedlFI?autoplay=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+<script>
         // Initialize animations and effects
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize libraries
@@ -271,11 +271,10 @@
                     yoyo: true,
                     ease: "power2.inOut"
                 });
-                
-                // Start music
+                // Start music only
                 document.getElementById('bg-music').volume = 0.3;
                 document.getElementById('bg-music').play();
-            });
+});
 
             // Surprise button
             document.getElementById('surprise-btn').addEventListener('click', () => {
